@@ -11,8 +11,7 @@
 import json
 import logging
 import re
-
-logging.basicConfig(filename='contact.log', level=logging.INFO)
+from logging_handler import logger
 
 class Addressbook():
     # creating a constructor
@@ -26,7 +25,7 @@ class Addressbook():
             It will ask user to make choice and accordingly call methods
         """
 
-        print("Enter 1. To add contact")
+        print("Enter 1. To add contact 2.To delete contact 3.To update contact 4.To read contacts")
         
         choice = int(input("Enter your choice: "))
         try:
@@ -38,6 +37,16 @@ class Addressbook():
 
         if choice==1:
             address_json = self.add_contact(address_dict)
+
+        elif choice == 2:
+            address_json = self.delete_contact(address_dict)
+
+        elif choice == 3:
+            address_json = self.update_contact(address_dict)
+        
+        elif choice == 4:
+            address_json = self.read_data()
+
         else:
             print("Invalid choice!! Please enter correct input")
             self.main()
@@ -48,6 +57,92 @@ class Addressbook():
             self.main()
         else:
             return
+
+    def read_data(self):
+        f = open('addressbook.json',)
+        data = json.load(f)
+        for i in data['address']:
+            print(i)
+        
+  
+        # Closing file
+        f.close()
+                
+    # function to update contact 
+    def update_contact(self, address_json):
+        """
+        Description:
+            This function is to delete contact from addressbook. It asks user to enter
+            name and contact to delete the contact.
+        Parameters:
+            It takes address_json as parameter where we have loaded json file
+        Return:
+            It return addressbook dictionary
+        """
+        address_data = address_json['address']
+        name = input("Enter name of contact to update ")
+        number = input("Enter number of contact to update ")
+        field_names = input("Enter which field/s to be updated - 1.Address 2.Contact Number 3.zip Code 4.City 5.state ")
+        choice_id = field_names.split(",") # 1,3,4 ==> [1,3,4]
+        choice_field_dict = {
+            "1":"address",
+            "2":"Number",
+            "3":"zipcode",
+            "4":"city",
+            "5":"state"
+        }
+        with open("addressbook.json", 'w') as f:
+            for data in address_data:
+                if data['Name'] == name and data['Number'] == number:
+                    for choice in choice_id:
+                        try:
+                            field_name = choice_field_dict[choice]
+                        except Exception as e:
+                            print("Please enter valid input")
+                            self.update_contact(address_json)
+                        input_value = input(f"Enter {choice_field_dict[choice]} ")
+                        data[choice_field_dict[choice]] = input_value
+                else:
+                    print("Contact with given name not found!! Enter correct name")
+                    self.update_contact(address_json)
+
+            logger.info(address_json)
+            address_json = json.dumps(address_json)
+            f.write(address_json)
+            logger.info(f"Contact updated sucessfully {address_json}")
+    
+        return address_json
+
+    # function to delete contact
+    def delete_contact(self, address_json):
+        """
+        Description:
+            This function is to delete contact from addressbook. It asks user to enter
+            name and contact to delete the contact.
+        Parameters:
+            It takes address_json as parameter where we have loaded json file
+        Return:
+            It return addressbook dictionary
+        """
+        address_data = address_json['address']
+        name = input("Enter name of contact to delete ")
+        number = input("Enter number of contact to update ")
+
+        for data in address_data:
+            if data['Name'] == name and data['Number'] == number:
+                index = address_data.index(data)
+                address_data.pop(index)
+                logger.info(f"Contact deleted successfully {name}")
+            else:
+                print("Contact not found!! Please enter contact present in addressbook")
+                self.delete_contact(address_json)
+
+                with open("addressbook.json", 'w') as f:
+                    address_json = json.dumps(address_json)
+                    f.write(address_json)
+    
+        return address_data
+
 
     # function to add new contact   
     def add_contact(self, address_dict):
@@ -124,7 +219,7 @@ class Addressbook():
         final_address_dict = json.dumps(final_address_dict)
         with open('addressbook.json', 'w') as f:
             f.write(final_address_dict) # writing in json file with json writer
-            logging.info(f"contact added successfully {address_json}")
+            logger.info(f"contact added successfully {address_json}")
             print("Contact added successfully")
     
         return final_address_dict
