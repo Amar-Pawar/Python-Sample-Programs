@@ -1,3 +1,31 @@
 {
-    "doctor_data": []
+    "doctor_data": [
+        {
+            "id": 1,
+            "name": "Amar Pawar",
+            "qualification": "M.B.B.S.",
+            "specialization": "Heart Specialist",
+            "availability": "11pm - 7am",
+            "patients_list": [],
+            "total_patients": 0
+        },
+        {
+            "id": 2,
+            "name": "Janhavi Mhatre",
+            "qualification": "M.D.",
+            "specialization": "Skin Specialist",
+            "availability": "10am - 2pm",
+            "patients_list": [],
+            "total_patients": 0
+        },
+        {
+            "id": 3,
+            "name": "Gautami Mhatre",
+            "qualification": "M.D.",
+            "specialization": "Skin Specialist",
+            "availability": "2pm - 7pm",
+            "patients_list": [],
+            "total_patients": 0
+        }
+    ]
 }
