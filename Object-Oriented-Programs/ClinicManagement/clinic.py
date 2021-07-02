@@ -3,7 +3,7 @@
 @Author: Amar Pawar
 @Date: 2021-06-1
 @Last Modified by: Amar Pawar
-@Last Modified time: 2021-06-1
+@Last Modified time: 2021-06-2
 @Title : Clinic Management
 /**********************************************************************************
 '''
@@ -35,7 +35,7 @@ class ClinicManagement():
         if choice == 1:
             self.get_doctor_data(doctor_data)
         if choice == 2:
-            pass
+            self.get_patient_data(patient_data)
         if choice == 3:
             pass
 
@@ -55,6 +55,24 @@ class ClinicManagement():
                 availability = doctor['availability']
                 print(f"Name: {name} \nSpecialization: {specialization} \nAvailability: {availability}")
                 logger.info(f"Name: {name} \nSpecialization: {specialization} \nAvailability: {availability}")
+        return
+
+    def get_patient_data(self, patient_data):
+        """
+        Description:
+            This function gives the information about the patient based on input provided by user as
+            name, number, id.
+        Parameters:
+            It takes patient_data as parameter where we have loaded json file
+        """
+        data_input = input("Enter details to search patient: ")
+        for patient in patient_data['patient_data']:
+            if data_input in patient.values():
+                name = patient['name']
+                id = patient['id']
+                number = patient['number']
+                print(f"Name: {name} \nId: {id} \nNumber: {number}")
+                logger.info(f"Name: {name} \nId: {id} \nNumber: {number}")
         return
 
 clinic_management = ClinicManagement()
