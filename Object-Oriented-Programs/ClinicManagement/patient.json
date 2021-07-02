@@ -1,14 +1,1 @@
-{
-    "patient_data": [
-        {
-            "id": 1,
-            "name": "Nishad Vairagi",
-            "number": "9890909090"
-        },
-        {
-            "id": 2,
-            "name": "Swaraj Mhatre",
-            "number": "8888888888"
-        }
-    ]
-}
+{"patient_data": [{"id": 1, "name": "Nishad Vairagi", "number": "9890909090"}, {"id": 2, "name": "Swaraj Mhatre", "number": "8888888888"}, {"id": 3, "name": "Janhavi", "number": "5656789890"}, {"id": 4, "name": "xyz", "number": "7777777777"}, {"id": 5, "name": "asasfa", "number": "4523526"}, {"id": 6, "name": "xyz", "number": "3456"}, {"id": 7, "name": "axg", "number": "776868877"}, {"id": 8, "name": "qqq", "number": "5463"}, {"id": 9, "name": "mental", "number": "1111111"}, {"id": 10, "name": "mental", "number": "5656787890"}, {"id": 11, "name": "mental", "number": "4234235"}, {"id": 12, "name": "mayur", "number": "8888777766"}, {"id": 13, "name": "sagar", "number": "887778788"}]}
