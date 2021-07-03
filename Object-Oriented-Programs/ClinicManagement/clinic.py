@@ -1,9 +1,9 @@
 '''
 /**********************************************************************************
 @Author: Amar Pawar
-@Date: 2021-06-1
+@Date: 2021-07-1
 @Last Modified by: Amar Pawar
-@Last Modified time: 2021-06-2
+@Last Modified time: 2021-07-2
 @Title : Clinic Management
 /**********************************************************************************
 '''
@@ -123,8 +123,24 @@ class ClinicManagement():
             print("No doctor found with such id")
             self.book_appointment(doctor_data, patient_data)
         # input from patient to enter its detail
+        # validating name
+        
+        pattern = re.compile("^[A-Za-z]{3,}$")
         name = input("Enter your name: ")
+        if re.match(pattern,name):
+            pass
+        else:
+            print("Name should contain only letters ans min 3 characters Example: Amar")
+            name = input("Enter your name: ")
+        # validating numberaa
+        
+        pattern = re.compile("^[7-9]{1}[0-9]{9}$")
         number = input("Enter your number: ")
+        if re.match(pattern,number):
+            pass
+        else:
+            print("Enter valid phone number. Example: 9098989765")
+            number = input("Enter your number: ")
         id = 0
         for data in patient_data['patient_data']:
             id = data['id']
