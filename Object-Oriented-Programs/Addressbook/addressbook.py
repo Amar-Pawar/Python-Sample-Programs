@@ -3,7 +3,7 @@
 @Author: Amar Pawar
 @Date: 2021-06-30
 @Last Modified by: Amar Pawar
-@Last Modified time: 2021-06-30
+@Last Modified time: 2021-07-02
 @Title : Addressbook System
 /**********************************************************************************
 '''
@@ -36,16 +36,16 @@ class Addressbook():
             return
 
         if choice==1:
-            address_json = self.add_contact(address_dict)
+            self.add_contact(address_dict)
 
         elif choice == 2:
-            address_json = self.delete_contact(address_dict)
+            self.delete_contact(address_dict)
 
         elif choice == 3:
-            address_json = self.update_contact(address_dict)
+            self.update_contact(address_dict)
         
         elif choice == 4:
-            address_json = self.read_data()
+            self.read_data()
 
         else:
             print("Invalid choice!! Please enter correct input")
