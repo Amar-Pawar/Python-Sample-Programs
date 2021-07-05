@@ -1,9 +1,0 @@
-2021-07-04 22:14:04,092 dictionary ordered by keys OrderedDict([('age', 'pqr'), ('name', 'Amar'), ('profession', 'Engineer')])
-2021-07-04 22:14:04,092 Dictionary sorted in descending order by values: [('age', 'pqr'), ('profession', 'Engineer'), ('name', 'Amar')]
-2021-07-04 22:14:04,092 age,pqr
-2021-07-04 22:14:04,092 profession,Engineer
-2021-07-04 22:14:04,092 name,Amar
-2021-07-04 22:14:04,092 Dictionary elements in ascending order by values: [('name', 'Amar'), ('profession', 'Engineer'), ('age', 'pqr')]
-2021-07-04 22:14:04,092 name,Amar
-2021-07-04 22:14:04,092 profession,Engineer
-2021-07-04 22:14:04,092 age,pqr
