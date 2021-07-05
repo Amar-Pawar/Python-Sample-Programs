@@ -16,14 +16,17 @@ class Array():
         Description:
             This function prints array of 5 numbers and disply its elements. 
         """
-        # creating array with list comprehension
-        int_array = [x for x in range(5)]
-        logger.info(int_array)
-        # printing array elemets by iterating with for loops
-        for i in range(len(int_array)):
-            logger.info(int_array[i])
-        # printing array elements with index
-        logger.info(int_array[3])
+        try:
+            # creating array with list comprehension
+            int_array = [x for x in range(5)]
+            logger.info(int_array)
+            # printing array elemets by iterating with for loops
+            for i in range(len(int_array)):
+                logger.info(int_array[i])
+            # printing array elements with index
+            logger.info(int_array[3])
+        except Exception as e:
+            logger.info(f"Error {e}")
 
 disply_array = Array()
 disply_array.display_array_elements()
