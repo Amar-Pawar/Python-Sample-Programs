@@ -16,10 +16,13 @@ def list_to_dict():
         This function prints list as keys with nested dictionaries. 
     """
     name_list = ["Amar", "sagar", "sanket", "swaraj"]
-    dict = current = {}
-    for name in name_list:
-        current[name] = {}
-        current = current[name]
-    logger.info(f"dictionary with nested keys: {dict}")
+    try:
+        dict = current = {}
+        for name in name_list:
+            current[name] = {}
+            current = current[name]
+        logger.info(f"dictionary with nested keys: {dict}")
+    except Exception as e:
+        logger.info(f"Error!! {e}")
 
 list_to_dict()
