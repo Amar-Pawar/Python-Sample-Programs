@@ -16,9 +16,12 @@ class Array():
         Description:
             This function removes first occurance of specific element from array.
         """
-        array = [1,5,10,1,9,1,44]
-        array.remove(1)
-        logger.info(array)
+        try:
+            array = [1,5,10,1,9,1,44]
+            array.remove(1)
+            logger.info(array)
+        except Exception as e:
+            logger.info(f"Error {e}")
 
 remove_element = Array()
 remove_element.remove_element()
