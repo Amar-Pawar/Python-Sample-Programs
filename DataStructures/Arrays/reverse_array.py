@@ -16,11 +16,14 @@ class Array():
         Description:
             This function prints array elements in reverse order using reverse() method.
         """
-        # creating array with list comprehension
-        int_array = [x for x in range(5)]
-        # using reverse() method to print elements in reverse order
-        int_array.reverse()
-        logger.info(int_array)
+        try:
+            # creating array with list comprehension
+            int_array = [x for x in range(5)]
+            # using reverse() method to print elements in reverse order
+            int_array.reverse()
+            logger.info(int_array)
+        except Exception as e:
+            logger.info(f"Error {e}")
 
 reverse_array = Array()
 reverse_array.reverse_array_items()
