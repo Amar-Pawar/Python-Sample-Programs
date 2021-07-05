@@ -19,11 +19,14 @@ class Array():
             This function prints occurances of specific elements in array by using counter() function
             imported from python collections.
         """
-        array_list = ["1", "5", "5", "5", "1"]
-        # using counter to get occurances
-        occurrences = Counter(array_list)
-        logger.info(occurrences)
-        logger.info(occurrences["5"])
+        try:
+            array_list = ["1", "5", "5", "5", "1"]
+            # using counter to get occurances
+            occurrences = Counter(array_list)
+            logger.info(occurrences)
+            logger.info(occurrences["5"])
+        except Exception as e:
+            logger.info(f"Error {e}")
 
 counter = Array()
 counter.count_elements()
