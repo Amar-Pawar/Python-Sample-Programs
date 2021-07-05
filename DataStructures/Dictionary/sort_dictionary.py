@@ -31,26 +31,32 @@ class Dictionary():
             This function prints dictionary in descending order by values. 
         """
         # sort by value
-        desc_sort= (sorted(self.person.items(), key =
-                    lambda kv:kv[1], reverse=True))
-        logger.info(f"Dictionary sorted in descending order by values: {desc_sort}")
+        try:
+            desc_sort= (sorted(self.person.items(), key =
+                        lambda kv:kv[1], reverse=True))
+            logger.info(f"Dictionary sorted in descending order by values: {desc_sort}")
 
-        #seperating elements            
-        for i in desc_sort:
-            logger.info("{},{}".format(i[0],i[1]))
-            
+            #seperating elements            
+            for i in desc_sort:
+                logger.info("{},{}".format(i[0],i[1]))
+        except Exception as e:
+            logger.info(f"Error!!!{e}")
+                
     def ascending_sort(self):
         """
         Description:
             This function prints dictionary in ascending order by values. 
         """
         # ascending order
-        asc_sort= (sorted(self.person.items(), key =
-                    lambda kv:kv[1]))
-        logger.info(f"Dictionary elements in ascending order by values: {asc_sort}")
-        # sepersting elements
-        for i in asc_sort:
-            logger.info("{},{}".format(i[0],i[1]))
+        try:
+            asc_sort= (sorted(self.person.items(), key =
+                        lambda kv:kv[1]))
+            logger.info(f"Dictionary elements in ascending order by values: {asc_sort}")
+            # sepersting elements
+            for i in asc_sort:
+                logger.info("{},{}".format(i[0],i[1]))
+        except Exception as e:
+            logger.info(f"Error!!{e}")
 
 dict = Dictionary()
 dict.ordered_dict()
