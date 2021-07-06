@@ -10,7 +10,7 @@
 import logging
 from logging_handler import logger
 
-def Remove():
+def remove_duplicate():
     """
     Description:
         This function will remove duplicate elements in list.
@@ -25,4 +25,4 @@ def Remove():
     except Exception as e:
         logger.info(f"Error!! {e}")
         
-Remove()
+remove_duplicate()
