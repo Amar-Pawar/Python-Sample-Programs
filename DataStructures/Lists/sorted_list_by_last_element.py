@@ -1,9 +1,9 @@
 '''
 /**********************************************************************************
 @Author: Amar Pawar
-@Date: 2021-07-04
+@Date: 2021-07-06
 @Last Modified by: Amar Pawar
-@Last Modified time: 2021-07-04
+@Last Modified time: 2021-07-06
 @Title : Sort list by last element in tupple.
 /**********************************************************************************
 '''
@@ -21,6 +21,6 @@ def sort_list_last():
         logger.info(f"list after sorting: {list1}")
     except Exception as e:
         logger.info(f"Error!! {e}")
-        
+
 sort_list_last()
 
