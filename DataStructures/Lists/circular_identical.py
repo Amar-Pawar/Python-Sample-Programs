@@ -18,14 +18,17 @@ def circularly_identical():
     list1 = [10, 10, 0, 0, 10]
     list2 = [10, 10, 10, 0, 0]
     list3 = [1, 10, 10, 0, 0]
-    # doubling list
-    list1.extend(list1) 
-    # traversal in twice of list1
-    for i in range(len(list1)):
-        # check if sliced list1 is equal to list2
-        if list3 == list1[i: i + len(list3)]:
-            return True
-    return False
+    try:
+        # doubling list
+        list1.extend(list1) 
+        # traversal in twice of list1
+        for i in range(len(list1)):
+            # check if sliced list1 is equal to list2
+            if list2 == list1[i: i + len(list2)]:
+                return True
+        return False
+    except Exception as e:
+        logger.info(f"Error!! {e}")
 
 logger.info(circularly_identical())
 
