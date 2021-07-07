@@ -18,7 +18,7 @@ def sort_unique_words():
     try:
         items = input("Input comma separated sequence of words: ")
         words = [word for word in items.split(",")]
-        unique_words = (",".join(sorted(list(set(words)))))
+        unique_words = (",".join(sorted(set(words))))
         logger.info(f"lengt of given string is: {unique_words}")
     except Exception as e:
         logger.info(f"Error!! {e}")
